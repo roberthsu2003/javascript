@@ -1,0 +1,6 @@
+console.log(6+9)
+console.log(20-15)
+console.log(3*7)
+console.log(10/3)
+console.log(8%3)
+console.log(5**2)
