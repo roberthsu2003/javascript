@@ -154,7 +154,42 @@ console.log(`商:${parseInt(n/m)},餘數:${n%m}`)
 商:11,餘數:1
 ```
 
+### 複合指定運算子
+- x=x+2，可精簡為 x+=2
+- y=y-3，可精簡為 y-=3
+
+```javascript
+const prompt = require('prompt-sync')({sigint: true});
+let money = 50000;
+let cell = prompt('請輸入手機金額:');
+money -= parseInt(cell);
+console.log(`剩餘款為:${money}`)
+
+結果:===================
+請輸入手機金額:30000
+剩餘款為:20000
+```
 
 
+```javasccript
+//請以(複合指定運算子)設計程式,讓用者輸入三個任意數，程式會顯示3數相加的總和(float)
 
+const prompt = require('prompt-sync')({sigint: true});
+let sum = 0;
+let x = parseFloat(prompt('請輸入第1個數:'))
+sum += x;
 
+x = parseFloat(prompt('請輸入第2個數:'))
+sum += x;
+
+x = parseFloat(prompt('請輸入第3個數:'))
+sum += x;
+
+console.log(`三個數的總和為:${sum}`)
+
+結果:===================
+請輸入第1個數:56.45
+請輸入第2個數:67.24
+請輸入第3個數:31.92
+三個數的總和為:155.61
+```
