@@ -109,7 +109,28 @@ console.log(`成績等級為：${grade}`)
 • 如果x是負數而且為奇數，則傳回值為 -(-x) ** (1 / y)。
 
 
+const prompt = require('prompt-sync')({sigint:true})
+let x = parseInt(prompt('請輸入x:'))
+let y = parseInt(prompt('請輸入y:'))
+
+if (x >= 0)
+    root = x ** (1 / y)
+else{
+    if (x % 2 == 0)
+        root = "虛數"
+    else
+        root = (-(-x)) ** (1 / y)
+}
+console.log(`root=${root}`)
+
+
+結果:========================
+請輸入x:5
+請輸入y:6
+root=1.3076604860118306
 ```
+
+
 
 ### 邏輯運算子
 
@@ -120,3 +141,38 @@ console.log(`成績等級為：${grade}`)
 | && | 左右兩個條件若都為真則為真，否則為假。 |
 | 2直值 | 左右兩個條件只要一個為真就是真，否則為假。 |
 | ! |  條件若為真則改為假，若為假則改為真。 |
+
+```javascript
+const prompt = require('prompt-sync')({sigint:true})
+chinese = parseInt(prompt('請輸入國文分數:'))
+math = parseInt(prompt('請輸入數學分數:'))
+
+if (chinese == 100 && math == 100)
+    console.log("獎金1000元")
+else if (chinese == 100 || math == 100)
+    console.log("獎金500元")
+else
+    console.log("沒有獎金")
+    
+結果:========================
+請輸入國文分數:100
+請輸入數學分數:100
+獎金1000元
+```
+
+### HomeWork:BMI 計算後分析
+- 請依據 BMI 值分析他人的身體狀況。
+
+| BMI值 | < 18.5 | 18.5-25 | 25-30 | >30 |
+|:--|:--|:--|:--|:--|
+| 身體狀態 | 太輕 | 正常 | 過重 | 肥胖 |
+ 
+ ```
+ #bmi.py
+ 結果==================
+ 請輸入身高,單位為(公分):177
+ 請輸入體重,單位為(公斤):80
+ 
+ 您的BMI是25.53544
+ 「您的體重過重」
+ ```
