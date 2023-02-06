@@ -33,6 +33,13 @@ console.log(5**2)
 25
 ```
 
+#### 不會自動換行
+- process.stdout.write();
+
+```javascript
+process.stdout.write("hello:\n");
+```
+
 ### 建立變數
 - let
 
