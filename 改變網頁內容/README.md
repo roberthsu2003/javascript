@@ -1,5 +1,6 @@
 # 改變網頁內容
 ### lesson1
+![](./images/pic1.png)
 
 ```html
 <!DOCTYPE html>
