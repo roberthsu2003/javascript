@@ -421,5 +421,62 @@ let guess = randomNum % (max-min+1) + min
 console.log(guess)
 ```
 
+#### 猜數字遊遊戲
+
+```javascript
+
+const prompt = require('prompt-sync')({sigint:true})
+let min = 1
+let max = 100
+let count = 0
+let randomNum = parseInt(Math.random()*10e15)
+let guess = randomNum % (max-min+1) + min
+console.log("===============猜數字遊戲=================:\n")
+while(true){
+    count += 1
+    keyin = parseInt(prompt(`猜數字範圍${min}~${max}:`))
+    if(keyin >=min && keyin <=max){
+        if(keyin == guess){
+            console.log(`賓果!猜對了, 答案是:${keyin}`)
+            console.log(`您猜了${count}次`)
+            break
+        }else if (keyin > guess){
+            max = keyin-1
+            console.log("再小一點")
+        }else if(keyin < guess){
+            min = keyin+1
+            console.log("再大一點")
+        }
+        console.log(`您已經猜了${count}次`)
+        
+    }else{
+        console.log("請輸入提示範圍內的數字")
+    }
+}
+
+
+結果:===========================
+===============猜數字遊戲=================:
+
+猜數字範圍1~100:50
+再小一點
+您已經猜了1次
+猜數字範圍1~49:25
+再小一點
+您已經猜了2次
+猜數字範圍1~24:13
+再大一點
+您已經猜了3次
+猜數字範圍14~24:19
+再小一點
+您已經猜了4次
+猜數字範圍14~18:16
+再大一點
+您已經猜了5次
+猜數字範圍17~18:17
+賓果!猜對了, 答案是:17
+您猜了6次
+```
+
 
 
