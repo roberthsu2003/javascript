@@ -2,23 +2,6 @@
 - object是key,value的資料結構
 - array是有順序的集合資料
 
-### 使用object literal建立
-
-```javascript
-var empty = {}; //建立空陣列
-var point = { x:0, y:0 }; //建立2個property,記任property不可以是字串
-var point2 = { x:point.x, y:point.y+1 }; 
-var book = {  //當property有空白可以使用字串
-	"main title": "JavaScript",
-	'sub-title': "The Definitive Guide",
-	"for": "all audiences",
-		author: {
-		firstname: "David",
-		surname: "Flanagan"
-		} 
-};
-
-```
 
 ### 使用array literal建立
 
@@ -217,3 +200,140 @@ console.log(result)
 ==================
 [ 2, 4, 6, 8, 10 ]
 ```
+
+## object
+### 使用object literal建立
+
+```typescript
+var empty = {}; //建立空陣列
+console.log(empty)
+
+var point = { x:0, y:0 }; //建立2個property,記任property不可以是字串
+console.log(point)
+console.log("=========")
+var point2 = { x:point.x, y:point.y+1 }; 
+console.log(point2)
+console.log("=========")
+var book = {  //當property有空白,hyphen,保留字可以使用字串
+	"main title": "JavaScript",
+	'sub-title': "The Definitive Guide",
+	"for": "all audiences",
+		author: {
+		firstname: "David",
+		surname: "Flanagan"
+		} 
+};
+console.log(book)
+//錯誤 book.for = 3
+console.log(book.for)
+
+結果:===================
+{}
+{ x: 0, y: 0 }
+=========
+{ x: 0, y: 1 }
+=========
+{
+  'main title': 'JavaScript',
+  'sub-title': 'The Definitive Guide',
+  for: 'all audiences',
+  author: { firstname: 'David', surname: 'Flanagan' }
+}
+all audiences
+```
+
+### 使用object literal建立
+
+```typescript
+var o = new Object();
+console.log(o)
+
+var a = new Array();
+console.log(a)
+
+var d = new Date();
+console.log(d)
+
+var r = new RegExp("js");
+console.log(r)
+
+
+結果:=========================
+{}
+[]
+2023-03-16T08:04:16.370Z
+/js/
+```
+
+### 使用fetch連結Web API
+
+- fetch,then
+
+```typescript
+fetch('https://reqbin.com/echo/post/json', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ "id": 1 })
+})
+    .then(response => console.log(response.status))
+
+結果:============
+200
+
+```
+
+```typescript
+fetch('https://reqbin.com/echo/post/json', {
+    method: 'POST'
+})
+    .then(response => response.json())
+    .then(json => console.log(JSON.stringify(json)))
+
+結果:==================
+{"success":"true"}
+
+
+```
+
+- 非同步await
+- await 必需在 async function內執行
+```typescript
+async function test() {
+    const response = await fetch('https://reqbin.com/echo/get/json');
+
+    const json = await response.json();
+
+    console.log(JSON.stringify(json));
+}
+
+test()
+
+結果:===========================
+{"success":"true"}
+```
+
+- await的處理方式
+- 新北市公共自行車租賃系統(YouBike)
+
+```typescript
+
+async function test() {
+    const response = await fetch('https://data.ntpc.gov.tw/api/datasets/71cd1490-a2df-4198-bef1-318479775e8a/json?size=100');
+
+    let json = await response.json();
+    return json
+}
+
+test().then(json => {
+    console.log(json)
+})
+
+
+```
+
+
+
+
+
