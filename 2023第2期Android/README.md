@@ -10,3 +10,6 @@ https://meet.google.com/ugr-gzyk-mnq
 
 ## 2023_05_09_上午
 [錄影](https://youtube.com/live/6P2kOh5MLsA)
+
+## 2023_05_09_下午
+[錄影](https://youtube.com/live/mXDjCT7hmY0)
