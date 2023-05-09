@@ -9,3 +9,4 @@ info_element.innerHTML = msg;
 //window.alert(`現在browser位置${window.location}`)
 favDialog_element = document.getElementById('favDialog')
 favDialog_element.showModal();
+//favDialog_element.show();
