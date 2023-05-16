@@ -1,5 +1,8 @@
-let sareaElement =  document.getElementById('sarea')
-
+let sareaElement =  document.getElementById('sarea');
+sareaElement.addEventListener('change', (event) => {
+    let selectedIndex = sareaElement.selectedIndex;
+    console.log(sareaElement.options[selectedIndex].value)
+});
 function reqListener() {
     let youbikedata = JSON.parse(this.responseText)
     let sarea_array = []
