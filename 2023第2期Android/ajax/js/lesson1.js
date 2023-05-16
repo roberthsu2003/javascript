@@ -1,3 +1,5 @@
+let sareaElement =  document.getElementById('sarea')
+
 function reqListener() {
     let youbikedata = JSON.parse(this.responseText)
     let sarea_array = []
@@ -5,7 +7,11 @@ function reqListener() {
         sarea_array.push(youbike.sarea)    
     }
     sarea_array = [...new Set(sarea_array)]
-    console.log(sarea_array)
+    for(const area of sarea_array){
+        let optionElement = document.createElement('option')
+        optionElement.textContent = area
+        sareaElement.appendChild(optionElement)
+    }
 }
 
 const windowload = (event) => {
