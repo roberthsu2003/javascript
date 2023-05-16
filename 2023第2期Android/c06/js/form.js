@@ -7,7 +7,10 @@ let termsHintElement = document.getElementById('termsHint')
 
 formElement.addEventListener('submit', (event) => {
     console.log('submitting')
-    event.preventDefault()
+    if(!termsElement.checked){
+        termsHintElement.innerText = '必需打勾同意'
+        event.preventDefault()
+    }
 })
 
 packageElement.addEventListener('change', (event) => {
@@ -23,5 +26,5 @@ packageElement.addEventListener('change', (event) => {
     }else{
         packageHintElement.innerText = '正確的選擇'
     }
-}
-)
+
+})
