@@ -1,11 +1,15 @@
+let sarea_array = []
 let sareaElement =  document.getElementById('sarea');
 sareaElement.addEventListener('change', (event) => {
     let selectedIndex = sareaElement.selectedIndex;
-    console.log(sareaElement.options[selectedIndex].value)
+    selectedValue=sareaElement.options[selectedIndex].value
+    if(sarea_array.includes(selectedValue)){
+        console.log('有這個行政區')
+    }
 });
+
 function reqListener() {
-    let youbikedata = JSON.parse(this.responseText)
-    let sarea_array = []
+    let youbikedata = JSON.parse(this.responseText)    
     for(const youbike of youbikedata){
         sarea_array.push(youbike.sarea)    
     }
