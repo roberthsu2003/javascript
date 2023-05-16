@@ -1,5 +1,6 @@
 function reqListener() {
-    console.log(this.responseText);
+    let youbikedata = JSON.parse(this.responseText)
+    console.log(youbikedata);
 }
 
 const windowload = (event) => {
