@@ -1,6 +1,7 @@
 let sarea_array = []
 let sareaElement =  document.getElementById('sarea');
 let areaNameElement = document.getElementById('areaName')
+let tbodyElement = document.getElementById('tbody')
 let youbikedata;
 
 sareaElement.addEventListener('change', (event) => {
@@ -9,11 +10,22 @@ sareaElement.addEventListener('change', (event) => {
     if(sarea_array.includes(selectedValue)){
         //console.log(`行政區:${selectedValue}`)
         areaNameElement.innerText = selectedValue
+        let trHTML = "" //行政區內的html資訊
         youbikedata.forEach(element => {
+            
             if (element.sarea == selectedValue){
-                console.log(element)
-            }            
-        });       
+                trHTML += "<tr>"
+                trHTML += "<td>" + element.sna +"</td>"
+                trHTML += "<td>" + element.ar +"</td>"
+                trHTML += "<td>" + element.tot +"</td>"
+                trHTML += "<td>" + element.sbi +"</td>"
+                trHTML += "<td>" + element.bemp +"</td>"
+                trHTML += "<td>" + element.act +"</td>"
+                trHTML += "</tr>"
+            }
+
+        }); 
+        tbodyElement.innerHTML = trHTML
     }
 });
 
