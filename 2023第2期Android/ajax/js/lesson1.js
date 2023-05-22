@@ -35,9 +35,16 @@ sareaElement.addEventListener('change', (event) => {
         });         
         tbodyElement.innerHTML = trHTML
         //取得所有的a元素
+        //a元素加入click事件
+        //取出a元素的data-sno的屬性值
+        
         let aElements = document.querySelectorAll('.map')
         aElements.forEach((element)=>{
-            console.log(element.dataset.sno)
+            element.addEventListener('click',(event)=>{
+                event.preventDefault()
+                let aElement = event.currentTarget
+                console.log(aElement.dataset.sno)
+            })
         })
     }
 });
