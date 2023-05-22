@@ -11,16 +11,22 @@ sareaElement.addEventListener('change', (event) => {
         //console.log(`行政區:${selectedValue}`)
         areaNameElement.innerText = selectedValue
         let trHTML = "" //行政區內的html資訊
-        youbikedata.forEach(element => {
-            
+        youbikedata.forEach(element => {            
             if (element.sarea == selectedValue){
+                if (element.act == "1"){
+                    var status = "營業中"
+                }else{
+                    var status = "維護中"
+                }
+
                 trHTML += "<tr>"
-                trHTML += "<td>" + element.sna +"</td>"
+                trHTML += "<td>" + element.sna.slice(11) +"</td>"
                 trHTML += "<td>" + element.ar +"</td>"
                 trHTML += "<td>" + element.tot +"</td>"
                 trHTML += "<td>" + element.sbi +"</td>"
                 trHTML += "<td>" + element.bemp +"</td>"
-                trHTML += "<td>" + element.act +"</td>"
+                trHTML += "<td>" + element.updateTime + "</td>"
+                trHTML += "<td>" + status +"</td>"
                 trHTML += "</tr>"
             }
 
