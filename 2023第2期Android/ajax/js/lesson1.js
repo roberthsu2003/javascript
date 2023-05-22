@@ -4,7 +4,7 @@ sareaElement.addEventListener('change', (event) => {
     let selectedIndex = sareaElement.selectedIndex;
     selectedValue=sareaElement.options[selectedIndex].value
     if(sarea_array.includes(selectedValue)){
-        console.log('有這個行政區')
+        console.log(`行政區:${selectedValue}`)
     }
 });
 
@@ -20,6 +20,7 @@ function reqListener() {
     for(const area of sarea_array){
         let optionElement = document.createElement('option')
         optionElement.textContent = area
+        optionElement.setAttribute('value',area)
         sareaElement.appendChild(optionElement)
     }
 }
