@@ -1,6 +1,7 @@
 let sarea_array = []
 let sareaElement =  document.getElementById('sarea');
 let areaNameElement = document.getElementById('areaName')
+let youbikedata;
 
 sareaElement.addEventListener('change', (event) => {
     let selectedIndex = sareaElement.selectedIndex;
@@ -8,11 +9,16 @@ sareaElement.addEventListener('change', (event) => {
     if(sarea_array.includes(selectedValue)){
         //console.log(`行政區:${selectedValue}`)
         areaNameElement.innerText = selectedValue
+        youbikedata.forEach(element => {
+            if (element.sarea == selectedValue){
+                console.log(element)
+            }            
+        });       
     }
 });
 
 function reqListener() {
-    let youbikedata = JSON.parse(this.responseText)    
+    youbikedata = JSON.parse(this.responseText)    
     for(const youbike of youbikedata){
         sarea_array.push(youbike.sarea)    
     }
