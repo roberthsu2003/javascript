@@ -3,6 +3,8 @@ let sareaElement =  document.getElementById('sarea');
 let areaNameElement = document.getElementById('areaName')
 let tbodyElement = document.getElementById('tbody')
 let dialogElement = document.getElementById('dialog')
+let mapElement = document.getElementById('map')
+
 let youbikedata;
 
 sareaElement.addEventListener('change', (event) => {
@@ -37,13 +39,14 @@ sareaElement.addEventListener('change', (event) => {
         //取得所有的a元素
         //a元素加入click事件
         //取出a元素的data-sno的屬性值
-        
+        //跳出<div class="map">對話欄
         let aElements = document.querySelectorAll('.map')
         aElements.forEach((element)=>{
             element.addEventListener('click',(event)=>{
                 event.preventDefault()
                 let aElement = event.currentTarget
                 console.log(aElement.dataset.sno)
+                mapElement.className = 'overlay'
             })
         })
     }
