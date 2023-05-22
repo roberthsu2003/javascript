@@ -28,7 +28,7 @@ sareaElement.addEventListener('change', (event) => {
                 trHTML += "<td>" + element.bemp +"</td>"
                 trHTML += "<td>" + element.updateTime + "</td>"
                 trHTML += "<td>" + status +"</td>"
-                trHTML += "<td><a href='#'>更多</a></td>"
+                trHTML += `<td><a href='#' data-sno=${element.sno}>更多</a></td>`
                 trHTML += "</tr>"
             }
 
