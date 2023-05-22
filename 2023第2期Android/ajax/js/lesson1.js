@@ -36,6 +36,11 @@ sareaElement.addEventListener('change', (event) => {
 });
 
 function reqListener() {
+    console.log(this.status)
+    if(this.status != 200){
+        console.log("網頁維護中...")
+        return 
+    }
     youbikedata = JSON.parse(this.responseText)    
     for(const youbike of youbikedata){
         sarea_array.push(youbike.sarea)    
@@ -52,11 +57,17 @@ function reqListener() {
     }
 }
 
+function reqError(){
+    console.log("網頁維護中")
+}
+
 const windowload = (event) => {
     console.log('網頁已經全部被載入');    
     const req = new XMLHttpRequest();
     req.addEventListener("load", reqListener);
-    req.open("GET", "https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json");
+    req.addEventListener("error",reqError)
+    //req.open("GET", "https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json");
+    req.open("GET", "https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v1/youbike_immediate.json");
     req.send();
 }
 
