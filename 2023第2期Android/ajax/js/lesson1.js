@@ -51,8 +51,7 @@ sareaElement.addEventListener('change', (event) => {
                 mapElement.className = 'overlay'
                 youbikedata.forEach(site=>{
                     if (site.sno == aElement.dataset.sno){
-                        console.log(site.lat)
-                        console.log(site.lng)
+                        open('https://www.google.com/maps/place/'+ site.lat +','+site.lng)
                     }
                 })
             })
@@ -105,3 +104,5 @@ window.addEventListener('load', windowload)
 exitElement.addEventListener('click',(event)=>{
     mapElement.className = 'close'
 })
+
+
