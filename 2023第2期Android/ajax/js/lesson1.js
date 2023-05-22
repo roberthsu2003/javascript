@@ -47,8 +47,14 @@ sareaElement.addEventListener('change', (event) => {
             element.addEventListener('click',(event)=>{
                 event.preventDefault()
                 let aElement = event.currentTarget
-                console.log(aElement.dataset.sno)
+                //console.log(aElement.dataset.sno)
                 mapElement.className = 'overlay'
+                youbikedata.forEach(site=>{
+                    if (site.sno == aElement.dataset.sno){
+                        console.log(site.lat)
+                        console.log(site.lng)
+                    }
+                })
             })
         })
     }
