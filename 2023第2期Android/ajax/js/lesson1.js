@@ -66,8 +66,9 @@ const windowload = (event) => {
     const req = new XMLHttpRequest();
     req.addEventListener("load", reqListener);
     req.addEventListener("readystatechange",reqReadyChange)
-    //req.open("GET", "https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json");
-    req.open("GET", "https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v1/youbike_immediate.json");
+    req.open("GET", "https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json");
+    /*模擬錯誤的網頁*/
+    //req.open("GET", "https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v1/youbike_immediate.json");
     req.send();
 }
 
