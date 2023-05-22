@@ -12,7 +12,7 @@ sareaElement.addEventListener('change', (event) => {
         //console.log(`行政區:${selectedValue}`)
         areaNameElement.innerText = selectedValue
         let trHTML = "" //行政區內的html資訊
-        youbikedata.forEach(element => {            
+        youbikedata.forEach(element => {           
             if (element.sarea == selectedValue){
                 if (element.act == "1"){
                     var status = "營業中"
@@ -28,12 +28,17 @@ sareaElement.addEventListener('change', (event) => {
                 trHTML += "<td>" + element.bemp +"</td>"
                 trHTML += "<td>" + element.updateTime + "</td>"
                 trHTML += "<td>" + status +"</td>"
-                trHTML += `<td><a href='#' data-sno=${element.sno}>更多</a></td>`
+                trHTML += `<td><a class="map" href="#" data-sno=${element.sno}>更多</a></td>`
                 trHTML += "</tr>"
             }
 
-        }); 
+        });         
         tbodyElement.innerHTML = trHTML
+        //取得所有的a元素
+        let aElements = document.querySelectorAll('.map')
+        aElements.forEach((element)=>{
+            console.log(element.dataset.sno)
+        })
     }
 });
 
