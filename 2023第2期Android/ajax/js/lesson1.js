@@ -51,11 +51,14 @@ sareaElement.addEventListener('change', (event) => {
                 //console.log(aElement.dataset.sno)
                 mapElement.className = 'overlay'
                 youbikedata.forEach(site=>{
-                    if (site.sno == aElement.dataset.sno){
-                        //open('https://www.google.com/maps/place/'+ site.lat +','+site.lng)
-                        //var url = 'https://www.google.com/maps/place/'+ site.lat +','+site.lng + "&output=embed";
-                        inlineMapElement.src = "https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik"
-                        //window.location.replace(url);
+                    if (site.sno == aElement.dataset.sno){                        
+                        let zoom = 17; // 0 - 18
+                        let center = [site.lat, site.lng]; // 中心點座標
+                        let map = L.map('showMap').setView(center, zoom);
+                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '© OpenStreetMap', // 商用時必須要有版權出處
+                        zoomControl: true , // 是否秀出 - + 按鈕
+                        }).addTo(map);
                     }
                 })
             })
