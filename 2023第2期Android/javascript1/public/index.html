@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" />
+    <title>Document</title>
+</head>
+<body>
+    <form method="post">
+        <fieldset>
+            <legend>行政區</legend>
+            <select id='sarea' autofocus>
+                
+            </select>
+        </fieldset>
+    </form>
+
+    <h2 id="areaName">行政區名稱</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>站點名稱</th>
+                <th>地址</th>
+                <th>車輛數</th>
+                <th>可借</th>
+                <th>可還</th>
+                <th>時間</th>
+                <th>狀態</th>
+                <th>資訊</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            <tr>
+                <td>YouBike2.0_捷運科技大樓站</td>
+                <td>復興南路二段235號前</td>
+                <td>28</td>
+                <td>2</td>
+                <td>25</td>
+                <td>時間</td>
+                <td>營業中</td>
+                <td><a href="#">更多</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <dialog id="dialog">
+        <p>網頁正在維護中....</p>
+        <form method="dialog">
+            <button>OK</button>
+        </form>
+    </dialog>
+
+    <div class="close" id="map">
+        
+        <input type="button" value="離開" id="exit">
+
+    </div>
+    
+<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"></script>  
+<script src="js/index.js"></script>
+
+</body>
+</html>
