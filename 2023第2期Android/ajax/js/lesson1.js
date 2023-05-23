@@ -4,7 +4,6 @@ let areaNameElement = document.getElementById('areaName')
 let tbodyElement = document.getElementById('tbody')
 let dialogElement = document.getElementById('dialog')
 let mapElement = document.getElementById('map')
-let inlineMapElement = document.querySelector('#inlineMap')
 let exitElement = document.getElementById('exit')
 
 let youbikedata;
@@ -50,15 +49,24 @@ sareaElement.addEventListener('change', (event) => {
                 let aElement = event.currentTarget
                 //console.log(aElement.dataset.sno)
                 mapElement.className = 'overlay'
+                //加入showMap<div id="showMap"></div>
+                let showMapElement =document.createElement('div')
+                showMapElement.setAttribute('id','showMap')
+                mapElement.appendChild(showMapElement)
+
                 youbikedata.forEach(site=>{
                     if (site.sno == aElement.dataset.sno){                        
-                        let zoom = 17; // 0 - 18
+                        let zoom = 18; // 0 - 18
                         let center = [site.lat, site.lng]; // 中心點座標
                         let map = L.map('showMap').setView(center, zoom);
                         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                         attribution: '© OpenStreetMap', // 商用時必須要有版權出處
                         zoomControl: true , // 是否秀出 - + 按鈕
                         }).addTo(map);
+                        let marker = L.marker(center,{
+                            title:'站點名稱',
+                            opacity:1.0
+                        }).addTo(map)                        
                     }
                 })
             })
