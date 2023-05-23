@@ -4,6 +4,7 @@ let areaNameElement = document.getElementById('areaName')
 let tbodyElement = document.getElementById('tbody')
 let dialogElement = document.getElementById('dialog')
 let mapElement = document.getElementById('map')
+let inlineMapElement = document.querySelector('#inlineMap')
 let exitElement = document.getElementById('exit')
 
 let youbikedata;
@@ -51,7 +52,10 @@ sareaElement.addEventListener('change', (event) => {
                 mapElement.className = 'overlay'
                 youbikedata.forEach(site=>{
                     if (site.sno == aElement.dataset.sno){
-                        open('https://www.google.com/maps/place/'+ site.lat +','+site.lng)
+                        //open('https://www.google.com/maps/place/'+ site.lat +','+site.lng)
+                        //var url = 'https://www.google.com/maps/place/'+ site.lat +','+site.lng + "&output=embed";
+                        inlineMapElement.src = "https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik"
+                        //window.location.replace(url);
                     }
                 })
             })
