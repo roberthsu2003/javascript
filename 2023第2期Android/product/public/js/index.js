@@ -14,7 +14,16 @@ const validateName = ()=>{
     allOfDataArray.push({'productName':productName})
 }
 
+const clearAllAlertAndData = ()=>{
+    //清除產品警告
+    let nameAlertElement = document.querySelector('#nameAlert')
+    nameAlertElement.classList.add("close")
+    //清除收集的資料
+    allOfDataArray = []
+}
+
 formElement.addEventListener('submit',(event)=>{
+    clearAllAlertAndData()
     event.preventDefault()
     validateName()
     console.log(allOfDataArray)
