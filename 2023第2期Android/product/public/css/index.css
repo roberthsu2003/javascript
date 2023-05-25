@@ -8,6 +8,11 @@
     "footer footer";
 }
 .header{    
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content:center;
+    align-items: center;
     background-color: azure;
     grid-row-start:1;
     grid-row-end: 2;
@@ -28,6 +33,11 @@
 }
 
 .footer{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content:center;
+    align-items: center;
     background-color: aquamarine;
     grid-area:footer;
 }
