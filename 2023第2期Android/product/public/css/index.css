@@ -1,7 +1,11 @@
 #container{
     display:grid;
     grid-template-columns: 200px 1fr;
-    grid-template-rows: 100px 500px 100px;
+    grid-template-rows: 8em 500px 8em;
+    grid-template-areas:
+    "header header"
+    "nav main"
+    "footer footer";
 }
 .header{    
     background-color: azure;
@@ -25,6 +29,5 @@
 
 .footer{
     background-color: aquamarine;
-    grid-row:3 / span 1;
-    grid-column: 1 / span 2;
+    grid-area:footer;
 }
