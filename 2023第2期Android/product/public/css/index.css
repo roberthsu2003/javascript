@@ -43,6 +43,7 @@
 .main{
     background-color: beige;
     grid-area:main;
+    padding: 5em;
 }
 
 .footer{
