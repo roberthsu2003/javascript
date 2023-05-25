@@ -1,12 +1,13 @@
 /*手機直的*/
 #container{
     display:grid;
-    grid-template-columns: 200px 1fr;
-    grid-template-rows: 8em auto 8em;
+    grid-template-columns: 1fr;
+    grid-template-rows: 8em auto auto 8em;
     grid-template-areas:
-    "header header"
-    "nav main"
-    "footer footer";
+    "header"
+    "nav"
+    "main"
+    "footer";
     width:100%;
 }
 .header{    
@@ -16,16 +17,12 @@
     justify-content:center;
     align-items: center;
     background-color: azure;
-    grid-row-start:1;
-    grid-row-end: 2;
-    grid-column-start: 1;
-    grid-column-end:3;
+    grid-area:header;
 }
 
 .nav{
     background-color: aqua;
-    grid-row: 2 / 3;
-    grid-column: 1 / span 1;
+    grid-area:nav;
 }
 
 .nav ul{
@@ -45,8 +42,7 @@
 
 .main{
     background-color: beige;
-    grid-row: 2 / 3;
-    grid-column:2 / 3;
+    grid-area:main;
 }
 
 .footer{
