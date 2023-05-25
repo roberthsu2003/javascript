@@ -1,15 +1,30 @@
-.header{
+#container{
+    display:grid;
+    grid-template-columns: 200px 500px;
+    grid-template-rows: 100px 500px 100px;
+}
+.header{    
     background-color: azure;
+    grid-row-start:1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end:3;
 }
 
 .nav{
     background-color: aqua;
+    grid-row: 2 / 3;
+    grid-column: 1 / span 1;
 }
 
 .main{
     background-color: beige;
+    grid-row: 2 / 3;
+    grid-column:2 / 3;
 }
 
 .footer{
     background-color: aquamarine;
+    grid-row:3 / span 1;
+    grid-column: 1 / span 2;
 }
