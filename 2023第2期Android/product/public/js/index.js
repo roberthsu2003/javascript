@@ -15,6 +15,8 @@ const setupCurrentDate = () => {
 
     let dateElement = document.querySelector('#warrantyDate')
     dateElement.value = current_date_string
+    dateElement.min = current_date_string
+
 }
 
 //setup現在的日期
