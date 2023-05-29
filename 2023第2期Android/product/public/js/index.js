@@ -1,6 +1,24 @@
 let formElement = document.querySelector('#form')
 let allOfDataArray = [];
+
+
+const setupCurrentDate = () => {
+    let current = new Date()
+    let year = current.getFullYear()
+    let month = current.getMonth()+1
+    let date = current.getDate()
+
+
+    let month_string = String(month).padStart(2,"0")
+    let date_string = String(date).padStart(2,"0")
+    let current_date_string = `${year}-${month_string}-${date_string}`
+
+    let dateElement = document.querySelector('#warrantyDate')
+    dateElement.value = current_date_string
+}
+
 //setup現在的日期
+setupCurrentDate()
 
 const validateName = ()=>{
     let inputNameElement = document.querySelector('#inputName')
