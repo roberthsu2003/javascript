@@ -70,6 +70,11 @@ const warrantyCheck = () =>{
     }
 }
 
+const getWranntyDate = () => {
+    let dateElement = document.querySelector('#warrantyDate')
+    allOfDataArray.push({'warrantyDate':dateElement.value})
+}
+
 const clearAllAlertAndData = ()=>{
     //清除產品警告
     let nameAlertElement = document.querySelector('#nameAlert')
@@ -90,5 +95,6 @@ formElement.addEventListener('submit',(event)=>{
     validateCodeFormat()
     checkRadioValue()
     warrantyCheck()
+    getWranntyDate()
     console.log(allOfDataArray)
 })
