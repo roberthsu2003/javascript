@@ -1,6 +1,6 @@
 let formElement = document.querySelector('#form')
-
 let allOfDataArray = [];
+//setup現在的日期
 
 const validateName = ()=>{
     let inputNameElement = document.querySelector('#inputName')
