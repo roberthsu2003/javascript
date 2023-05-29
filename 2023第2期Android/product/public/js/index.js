@@ -41,6 +41,15 @@ const checkRadioValue = () => {
     })
 }
 
+const warrantyCheck = () =>{
+    let checkboxElement = document.querySelector('#warrantyCheck1')
+    if (checkboxElement.checked){
+        allOfDataArray.push({'warranty':true})
+    }else{
+        allOfDataArray.push({'warranty':false})
+    }
+}
+
 const clearAllAlertAndData = ()=>{
     //清除產品警告
     let nameAlertElement = document.querySelector('#nameAlert')
@@ -60,5 +69,6 @@ formElement.addEventListener('submit',(event)=>{
     validateName()
     validateCodeFormat()
     checkRadioValue()
+    warrantyCheck()
     console.log(allOfDataArray)
 })
