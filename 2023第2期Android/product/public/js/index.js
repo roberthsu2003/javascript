@@ -1,6 +1,6 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js'
 
-import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js'
+import { getFirestore, addDoc, collection } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js'
 
 const firebaseConfig = {
     apiKey: "AIzaSyC0AO8-o_0FoVZgLfVs31UvYm1Gm-fL6lI",
@@ -122,7 +122,7 @@ const setEmpty = () => {
     setupCurrentDate()
 }
 
-formElement.addEventListener('submit',(event)=>{
+formElement.addEventListener('submit',async (event)=>{
     clearAllAlertAndData()
     event.preventDefault()
     validateName()
@@ -131,5 +131,11 @@ formElement.addEventListener('submit',(event)=>{
     warrantyCheck()
     getWranntyDate()
     console.log(allOfDataObject)
+    try{
+        const docRef = await addDoc(collection(db, "products"), allOfDataObject);        
+        console.log("這個文件的id是", docRef.id);
+    }catch(e){
+        console.error("加入文件的錯誤是 ", e);
+    }
     setEmpty()
 })
