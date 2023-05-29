@@ -49,4 +49,4 @@ https://meet.google.com/ugr-gzyk-mnq
   [錄影](https://youtube.com/live/n98FY-oslwg)
 
 ## 2023_05_29_下午
-  [錄影](https://youtube.com/live/n98FY-oslwg)
+  [錄影](https://youtube.com/live/JgAn4SgtpNg)
