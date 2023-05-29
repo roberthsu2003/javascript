@@ -12,6 +12,7 @@ const firebaseConfig = {
     appId: "1:785523512113:web:675e257b7b759e00b6d610"
 };
 const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
 let formElement = document.querySelector('#form')
 let allOfDataArray = [];
