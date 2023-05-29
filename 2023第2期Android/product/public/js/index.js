@@ -15,7 +15,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 let formElement = document.querySelector('#form')
-let allOfDataArray = [];
+let allOfDataObject = {};
 
 
 const setupCurrentDate = () => {
@@ -47,7 +47,8 @@ const validateName = ()=>{
         nameAlertElement.classList.remove("close")
         return
     }
-    allOfDataArray.push({'productName':productName})
+   //allOfDataArray.push({'productName':productName})
+    allOfDataObject['productName'] = productName
 }
 
 const validateCodeFormat = () =>{
@@ -64,7 +65,8 @@ const validateCodeFormat = () =>{
         console.log("執行錯誤")
         return
     }
-    allOfDataArray.push({'code':inputCodeValue})
+    //allOfDataArray.push({'code':inputCodeValue})
+    allOfDataObject['code'] = inputCodeValue
 }
 
 const checkRadioValue = () => {
@@ -72,7 +74,8 @@ const checkRadioValue = () => {
     radionElements.forEach(element => {
         if(element.checked){
             //console.log(element.value)
-            allOfDataArray.push({'catgory':element.value})
+            //allOfDataArray.push({'category':element.value})
+            allOfDataObject['category'] = element.value
         }
     })
 }
@@ -80,15 +83,18 @@ const checkRadioValue = () => {
 const warrantyCheck = () =>{
     let checkboxElement = document.querySelector('#warrantyCheck1')
     if (checkboxElement.checked){
-        allOfDataArray.push({'warranty':true})
+        //allOfDataArray.push({'warranty':true})
+        allOfDataObject['warranty'] = true
     }else{
-        allOfDataArray.push({'warranty':false})
+        //allOfDataArray.push({'warranty':false})
+        allOfDataObject['warranty'] = false
     }
 }
 
 const getWranntyDate = () => {
     let dateElement = document.querySelector('#warrantyDate')
-    allOfDataArray.push({'warrantyDate':dateElement.value})
+    //allOfDataArray.push({'warrantyDate':dateElement.value})
+    allOfDataObject['warrantyDate'] = dateElement.value
 }
 
 const clearAllAlertAndData = ()=>{
@@ -101,7 +107,7 @@ const clearAllAlertAndData = ()=>{
     codeAlertElement.classList.add("close")
 
     //清除收集的資料
-    allOfDataArray = []
+    allOfDataObject = {}
 }
 
 const setEmpty = () => {
@@ -124,6 +130,6 @@ formElement.addEventListener('submit',(event)=>{
     checkRadioValue()
     warrantyCheck()
     getWranntyDate()
-    console.log(allOfDataArray)
+    console.log(allOfDataObject)
     setEmpty()
 })
