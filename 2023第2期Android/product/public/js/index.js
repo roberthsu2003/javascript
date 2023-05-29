@@ -18,10 +18,14 @@ const validateCodeFormat = () =>{
     let inputCodeElement = document.querySelector('#inputCode')
     let codeAlertElement = document.querySelector('#codeAlert')
     let inputCodeValue = inputCodeElement.value
-    console.log(inputCodeValue)
-    if (inputCodeValue.length == 0){
+    
+    //正規則表達式
+    const codePatternReg = /\w\w\w-\w\w\w-\w\w\w/g
+
+    if (inputCodeValue.length == 0 || codePatternReg.test(inputCodeValue) == false){
         //console.log("沒有填資料")
         codeAlertElement.classList.remove("close")
+        console.log("執行錯誤")
         return
     }
     allOfDataArray.push({'code':inputCodeValue})
