@@ -32,9 +32,12 @@ const validateCodeFormat = () =>{
 }
 
 const checkRadioValue = () => {
-    let radionElements = document.querySelectorAll('.form-check-label')
+    let radionElements = document.querySelectorAll('.form-check-input')
     radionElements.forEach(element => {
-        
+        if(element.checked){
+            //console.log(element.value)
+            allOfDataArray.push({'catgory':element.value})
+        }
     })
 }
 
