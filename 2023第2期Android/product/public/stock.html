@@ -9,12 +9,24 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
     <script type="module">
+        let selectedElement = document.querySelector('#stockSelect')
         fetch(new Request('codeSearch.json'))
-        .then((response)=>{
-            return response.json()
-        }).then((r)=>{
-            console.log(r)
+        .then((response) => {
+                return response.json()
+        }).then((r) => {
+                r.forEach(element => {
+                    let name = element.name
+                    let code = element.code
+                    let stockName = `${code}-${name}`
+                    let optionElement = document.createElement("option")
+                    optionElement.value = code
+                    optionElement.innerText = stockName
+                    selectedElement.appendChild(optionElement)
+                });
         })
+        
+        
+
     </script>
 </head>
 
@@ -31,7 +43,10 @@
             </ul>
         </nav>
         <main class="main">
-
+            <select id="stockSelect" class="form-select" aria-label="Default select example">
+                <option selected>請選股票名稱</option>
+                
+            </select>
         </main>
         <footer class="footer">
             <h1>Footer</h1>
