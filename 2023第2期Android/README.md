@@ -55,4 +55,4 @@ https://meet.google.com/ugr-gzyk-mnq
   [錄影](https://youtube.com/live/f2uDQ27-i7o)
 
 ## 2023_05_30_下午
-  [錄影]()
+  [錄影](https://youtube.com/live/df-SH5wpqCM)
