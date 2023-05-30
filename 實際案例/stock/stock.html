@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>產品</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script type="module" src="js/stock.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <header class="header">
+            <h1>股票查詢</h1>
+        </header>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">產品輸入</a></li>
+                <li><a href="update.html">產品更新</a></li>
+                <li><a href="view.html">產品導覽</a></li>
+            </ul>
+        </nav>
+        <main class="main">
+            <form action="" method="post">
+                <div class="input-group mb-3">
+                    <select id="stockSelect" class="form-select" aria-label="Default select example">
+                        <option selected>請選股票名稱</option>
+                    </select>
+                </div>
+
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupFile02">請選擇年月</label>
+                    <input type="month" class="form-control" id="inputGroupFile02" min="2000-01">
+                </div>
+                <button class="btn btn-outline-secondary" type="submit">送出</button>
+            </form>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">日期</th>
+                        <th scope="col">成交股數</th>
+                        <th scope="col">成交金額</th>
+                        <th scope="col">開盤價</th>
+                        <th scope="col">最高價</th>
+                        <th scope="col">最低價</th>
+                        <th scope="col">收盤價</th>
+                        <th scope="col">漲跌價差</th>
+                        <th scope="col">成交筆數</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                    
+                </tbody>
+            </table>
+
+        </main>
+        <footer class="footer">
+            <h1>Footer</h1>
+        </footer>
+    </div>
+</body>
+
+</html>

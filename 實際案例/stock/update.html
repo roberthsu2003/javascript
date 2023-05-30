@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>產品</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <script src="js/index.js" type="module"></script>
+</head>
+<body>
+  <div id="container">
+    <header class="header">
+      <h1>產品輸入</h1>
+    </header>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">產品輸入</a></li>
+        <li><a href="update.html">產品更新</a></li>
+        <li><a href="view.html">產品導覽</a></li>
+      </ul>
+    </nav>
+    <main class="main">
+      <form id="form" method="post" action="">
+        <div class="mb-3">
+          <label for="inputName" class="form-label">產品名稱</label>
+          <input type="text" class="form-control" id="inputName" aria-describedby="nameHelp">
+          <div id="nameHelp" class="form-text">產品名稱要詳細</div>
+          <p id='nameAlert' class="alert close">*產品名稱一定要填寫</p>
+        </div>
+        <div class="mb-3">
+          <label for="InputCode" class="form-label">產品編號</label>
+          <input type="text" class="form-control" id="inputCode" aria-describedby="codeHelp">
+          <div id="codeHelp" class="form-text">xxx-xxx-xxx</div>
+          <p id="codeAlert" class="alert close">*格式不符合</p>
+        </div>
+        
+        <p>類別</p>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="生鮮" checked>
+          <label class="form-check-label" for="inlineRadio1">生鮮</label>
+        </div>
+        
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="熟食">
+          <label class="form-check-label" for="inlineRadio2">熟食</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="烘烤">
+          <label class="form-check-label" for="inlineRadio3">烘烤</label>
+        </div>
+
+        <p style="margin-top:5em;">保固需求</p>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input1" id="warrantyCheck1">
+          <label class="form-check-label1" for="warrantyCheck1">保固</label>
+        </div>
+
+      
+        <div class="mb-3 form-check" style="margin-top:5em;">
+          <label class="form-check-label1" for="warrantyDate">保存期限</label>
+          <input type="date" value="2018-07-22" class="form-check-input1" id="warrantyDate">          
+        </div>
+
+        <button type="submit" class="btn btn-primary">送出</button>
+        
+      </form>
+    </main>
+    <footer class="footer">
+      <h1>Footer</h1>
+    </footer>
+  </div>  
+</body>
+</html>
