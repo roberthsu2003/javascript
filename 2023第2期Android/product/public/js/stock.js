@@ -16,7 +16,14 @@ fetch(new Request('codeSearch.json'))
     })
 
 let formElement = document.querySelector('form')
+
 formElement.addEventListener('submit',(event)=>{
     event.preventDefault()
-    
+    let stockId = selectedElement.value
+    if (stockId.length>4){
+        return
+    }
+
+    console.log(stockId)
+
 })
