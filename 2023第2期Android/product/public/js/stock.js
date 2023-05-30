@@ -34,5 +34,11 @@ formElement.addEventListener('submit',(event)=>{
     let url=`https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=json&date=${fullDateString}&stockNo=${stockId}`
 
     console.log(url)
+    fetch(new Request(url),{'mode':'cors'})
+    .then((response) => {
+        return response.json()
+    }).then((r) => {
+        console.log(r)
+    })
 
 })
