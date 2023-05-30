@@ -30,13 +30,32 @@
                         <option selected>請選股票名稱</option>
                     </select>
                 </div>
-            
+
                 <div class="input-group mb-3">
                     <label class="input-group-text" for="inputGroupFile02">請選擇年月</label>
                     <input type="month" class="form-control" id="inputGroupFile02" min="2000-01">
                 </div>
                 <button class="btn btn-outline-secondary" type="submit">送出</button>
             </form>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">日期</th>
+                        <th scope="col">成交股數</th>
+                        <th scope="col">成交金額</th>
+                        <th scope="col">開盤價</th>
+                        <th scope="col">最高價</th>
+                        <th scope="col">最低價</th>
+                        <th scope="col">收盤價</th>
+                        <th scope="col">漲跌價差</th>
+                        <th scope="col">成交筆數</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                    
+                </tbody>
+            </table>
 
         </main>
         <footer class="footer">
