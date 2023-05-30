@@ -14,3 +14,9 @@ fetch(new Request('codeSearch.json'))
             selectedElement.appendChild(optionElement)
         });
     })
+
+let formElement = document.querySelector('form')
+formElement.addEventListener('submit',(event)=>{
+    event.preventDefault()
+    
+})
