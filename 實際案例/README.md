@@ -13,7 +13,7 @@
 
 ![畫面1](./images/pic3.png)
 
-### 3. [firebase_firestore新增,取出資料](./firebase_forestore)
+### 3. [firebase_firestore新增,取出資料](./firebase_firestore)
 
 - 相關檔案(index.html,view.html,index.js,view.js)
 
