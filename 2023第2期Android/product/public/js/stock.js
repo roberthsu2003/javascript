@@ -19,11 +19,20 @@ let formElement = document.querySelector('form')
 
 formElement.addEventListener('submit',(event)=>{
     event.preventDefault()
+    //取得股票名稱
     let stockId = selectedElement.value
     if (stockId.length>4){
         return
     }
 
-    console.log(stockId)
+    //取得年月份
+    let monthElement = document.querySelector('input[type="month"]')
+    let fullDateString = monthElement.value
+    fullDateString = fullDateString.replace("-","")
+    fullDateString += "01"
+    //整合網址
+    let url=`https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=json&date=${fullDateString}&stockNo=${stockId}`
+
+    console.log(url)
 
 })
